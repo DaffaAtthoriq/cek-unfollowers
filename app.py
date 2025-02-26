@@ -2,7 +2,7 @@ import os
 import json
 import zipfile
 import shutil
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
@@ -13,6 +13,10 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory('static', filename)
 
 @app.route("/upload", methods=["POST"])
 def upload_file():
