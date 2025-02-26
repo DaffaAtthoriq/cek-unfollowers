@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Analisis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Tidak memaksa ke tengah */
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: #d0e8ff; /* Biru Muda */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 450px;
+            max-height: 80vh; /* Maksimum tinggi agar tidak melebihi layar */
+            overflow-y: auto; /* Scroll jika konten panjang */
+            position: relative;
+        }
+        h1 {
+            color: #333;
+            position: sticky; /* Tetap di atas */
+            top: 0; /* Menempel di bagian atas */
+            background: #d0e8ff; /* Warna latar belakang sama dengan container */
+            padding: 10px 0;
+            margin: -20px -20px 10px -20px; /* Supaya lebarnya penuh */
+            z-index: 10; /* Supaya tidak tertutup elemen lain */
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .username-box {
+            background: #e0e0e0; /* Abu Muda */
+            padding: 8px;
+            border-radius: 10px;
+            margin: 5px;
+            display: inline-block;
+        }
+        .username-box a {
+            text-decoration: none;
+            color: #5e0000;
+            font-weight: 600;
+        }
+        .back-button {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #4d0000;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Orang yang tidak follow balik:</h1>
+        <div>
+            {% for user in not_following_back %}
+                <span class="username-box">
+                    <a href="https://instagram.com/{{ user }}" target="_blank">{{ user }}</a>
+                </span>
+            {% endfor %}
+        </div>
+        <a href="/" class="back-button">Kembali</a>
+    </div>
+</body>
+</html>
