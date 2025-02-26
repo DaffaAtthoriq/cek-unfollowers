@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Analisis</title>
+    <title>HASIL</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Tidak memaksa ke tengah */
+            align-items: flex-start; 
             height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
@@ -18,28 +18,28 @@
             padding: 20px;
         }
         .container {
-            background: #d0e8ff; /* Biru Muda */
+            background: #d0e8ff; 
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 450px;
-            max-height: 80vh; /* Maksimum tinggi agar tidak melebihi layar */
-            overflow-y: auto; /* Scroll jika konten panjang */
+            max-height: 80vh; 
+            overflow-y: auto; 
             position: relative;
         }
         h1 {
             color: #333;
-            position: sticky; /* Tetap di atas */
-            top: 0; /* Menempel di bagian atas */
-            background: #d0e8ff; /* Warna latar belakang sama dengan container */
+            position: sticky; 
+            top: 0; 
+            background: #d0e8ff; 
             padding: 10px 0;
-            margin: -20px -20px 10px -20px; /* Supaya lebarnya penuh */
-            z-index: 10; /* Supaya tidak tertutup elemen lain */
+            margin: -20px -20px 10px -20px; 
+            z-index: 10; 
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
         .username-box {
-            background: #e0e0e0; /* Abu Muda */
+            background: #e0e0e0; 
             padding: 8px;
             border-radius: 10px;
             margin: 5px;
@@ -66,7 +66,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Orang yang tidak follow balik:</h1>
+        <h1>YANG GA FOLLBACK ::</h1>
         <div>
             {% for user in not_following_back %}
                 <span class="username-box">
